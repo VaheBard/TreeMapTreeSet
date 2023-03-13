@@ -15,7 +15,7 @@ public class Main {
         Collections.sort(people);
         System.out.println("After sorting by default method\n" + people);
 
-        Collections.sort(people, new PersonsSurnameIncludeWordsComparator(3));
+        Collections.sort(people, new PersonsSurnameIncludeWordsComparator(4));
         System.out.println("\nAfter sorting by my comparator method\n" + people);
     }
 }

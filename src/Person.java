@@ -6,7 +6,7 @@ public class Person implements Comparable<Person> {
     private String name;
     private String surname;
     private int age;
-    private Set<String> surnameSet;
+    private final Set<String> surnameSet;
     public Person(String name, String surname, int age) {
         this.name = name;
         this.surname = surname;

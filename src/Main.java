@@ -1,6 +1,4 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -15,7 +13,16 @@ public class Main {
         Collections.sort(people);
         System.out.println("After sorting by default method\n" + people);
 
-        Collections.sort(people, new PersonsSurnameIncludeWordsComparator(3));
+        people.sort((o1, o2) -> {
+            int a = 5; /*here we set max amount of words in surname,
+                         if the words in surname will be less than this digit
+                         the comparison will be based on the number of words in the surname,
+                         else comparison will be based on age*/
+            if (o1.getSurnameSetLength() > a && o2.getSurnameSetLength() > a) {
+                return o2.getSurnameSetLength() - o1.getSurnameSetLength();
+            }
+            return o2.getAge() - o1.getAge();
+        });
         System.out.println("\nAfter sorting by my comparator method\n" + people);
     }
 }

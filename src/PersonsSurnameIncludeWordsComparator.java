@@ -1,7 +1,7 @@
 import java.util.Comparator;
 
 public class PersonsSurnameIncludeWordsComparator implements Comparator<Person> {
-    private int maxAmountOfWordsInSurname;
+    private final int maxAmountOfWordsInSurname;
     public PersonsSurnameIncludeWordsComparator(int maxAmountOfWordsInSurname) {
         this.maxAmountOfWordsInSurname = maxAmountOfWordsInSurname;
     }

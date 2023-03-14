@@ -6,31 +6,39 @@ public class Person implements Comparable<Person> {
     private String name;
     private String surname;
     private int age;
-    private Set<String> surnameSet;
+    private final Set<String> surnameSet;
+
     public Person(String name, String surname, int age) {
         this.name = name;
         this.surname = surname;
         this.age = age;
         this.surnameSet = new HashSet<>(List.of(surname.split("\\P{IsAlphabetic}+")));
     }
+
     public int getSurnameSetLength() {
         return surnameSet.size();
     }
+
     public void setName(String name) {
         this.name = name;
     }
+
     public void setSurname(String surname) {
         this.surname = surname;
     }
+
     public void setAge(int age) {
         this.age = age;
     }
+
     public String getName() {
         return name;
     }
+
     public String getSurname() {
         return surname;
     }
+
     public int getAge() {
         return age;
     }
